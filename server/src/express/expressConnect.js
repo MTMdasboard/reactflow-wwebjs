@@ -14,5 +14,5 @@ export default function expressConnect() {
   app.post("/flow/save", FlowController.save);
   app.get("/flow/load", FlowController.load);
 
-  app.listen(3000);
+  app.listen(process.env.EXPRESS_PORT);
 }
