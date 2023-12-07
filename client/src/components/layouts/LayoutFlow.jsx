@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactFlow, { Background, Controls } from 'reactflow';
+import ReactFlow, { Background, Controls, useEdgesState, useNodesState } from 'reactflow';
 import BotMessageNode from '../nodes/BotMessageNode';
 import CommandNode from '../nodes/CommandNode';
 import LeadNode from '../nodes/LeadNode';
@@ -77,12 +77,13 @@ const initialEdges = [
   { id: 'e7-8', source: '7', target: '8' },
 ];
 
-const LayoutFlow = () => {
+const LayoutFlow = ({data}) => {
     const [rfInstance, setRfInstance] = useState(null);
+  
     return (
       <ReactFlow
-        nodes={initialNodes}
-        edges={initialEdges}
+        nodes={data.nodes ? data.nodes : initialNodes}
+        edges={data.edges ? data.edges : initialEdges}
         nodeTypes={nodeTypes}
         nodesConnectable={false}
         onInit={setRfInstance}

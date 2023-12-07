@@ -128,3 +128,7 @@ dist
 
 # Documentation
 .docs/
+
+# Whatsapp wwebjs_cache
+.wwebjs_cache/
+.wwebjs_auth/

@@ -7,7 +7,7 @@ const LeadNode = ({ id, data }) => {
 
   const onChangeTel = (e) => {
     setTel(e.target.value);
-    data.var_name = e.target.value;
+    data.tel = e.target.value;
   };
 
   const onChangeVarTel = (e) => {
