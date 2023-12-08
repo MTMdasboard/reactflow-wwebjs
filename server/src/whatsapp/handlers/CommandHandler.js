@@ -216,7 +216,7 @@ class CommandHandler {
 
             const recipientNumberId = await this.client.getNumberId(
               data.recipient
-            );
+            ).catch((err) =>console.log(err));
 
             if (recipientNumberId?._serialized && data?.message)
               await this.client.sendMessage(
@@ -224,7 +224,7 @@ class CommandHandler {
                 data.message
               );
           }
-
+          
           await LeadModel.updateOne({
                 tel: contact.number
             }, {
