@@ -156,7 +156,7 @@ class CommandHandler {
             }
             break;
 
-          case "leadNode":
+          case "managerNode":
             if (node.data?.tel && node.data?.var_tel) {
               this.variables[node.data.var_tel] = node.data.tel;
             }
@@ -167,7 +167,6 @@ class CommandHandler {
         }
       }
 
-      // console.log('startDialog: %o\r\nvariables: %o\r\nleadChat: %o\r\nnodes: %o', this.startDialog, this.variables, this.leadChat, this.flow.nodes);
     }
   }
 
@@ -216,7 +215,7 @@ class CommandHandler {
 
             const recipientNumberId = await this.client.getNumberId(
               data.recipient
-            ).catch((err) =>console.log(err));
+            ).catch(() =>{});
 
             if (recipientNumberId?._serialized && data?.message)
               await this.client.sendMessage(

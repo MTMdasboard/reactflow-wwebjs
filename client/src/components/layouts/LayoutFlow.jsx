@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactFlow, { Background, Controls, useEdgesState, useNodesState } from 'reactflow';
 import BotMessageNode from '../nodes/BotMessageNode';
 import CommandNode from '../nodes/CommandNode';
-import LeadNode from '../nodes/LeadNode';
+import ManagerNode from '../nodes/ManagerNode';
 import UserNode from '../nodes/UserNode';
 import ActionPanel from '../panels/ActionPanel';
 
@@ -49,13 +49,13 @@ const initialNodes = [
         id: '7',
         type: 'botMessageNode',
         position: { x: 125, y: 800 },
-        data: { recipient: '{leadphone}', message: "{username}, {userphone} оставил заявку на получение консультации {lastcommand}. {datetime}. Необходимо с ним связаться." },
+        data: { recipient: '{managerphone}', message: "{username}, {userphone} оставил заявку на получение консультации {lastcommand}. {datetime}. Необходимо с ним связаться." },
       },
       {
         id: '8',
-        type: 'leadNode',
+        type: 'managerNode',
         position: { x: 322, y: 1050 },
-        data: { tel: '77007007070', var_tel: 'leadphone' },
+        data: { tel: '77007007070', var_tel: 'managerphone' },
       },
     ];
 
@@ -63,7 +63,7 @@ const nodeTypes = {
     userNode: UserNode,
     commandNode: CommandNode,
     botMessageNode: BotMessageNode,
-    leadNode: LeadNode,
+    managerNode: ManagerNode,
 };
 
 const initialEdges = [

@@ -128,3 +128,4 @@ dist
 
 # Documentation
 .docs/*.mp4
+.docs/video/
